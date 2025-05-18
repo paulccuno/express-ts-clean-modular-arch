@@ -1,0 +1,41 @@
+# --- Node ---
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- TypeScript ---
+*.tsbuildinfo
+
+# --- TSOA ---
+src/routes/routes.ts
+src/docs/swagger.json
+
+# --- Logs ---
+logs/
+*.log
+
+# --- Environment Variables ---
+.env
+.env.local
+.env.production
+
+# --- OS-specific ---
+.DS_Store
+Thumbs.db
+
+# --- Editor & IDE ---
+.vscode/
+.idea/
+*.swp
+
+# --- Tests ---
+coverage/
+*.spec.ts
+*.test.ts
+
+# --- Lock files ---
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
