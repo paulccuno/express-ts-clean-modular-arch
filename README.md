@@ -1,4 +1,4 @@
-# 🛠️ SABBI Challenge — API REST para Productos Compuestos
+# 🛠️ SABBI Challenge
 
 Este proyecto es una API REST construida con **Express.js + TypeScript**, siguiendo principios de **Clean Architecture**, usando:
 
