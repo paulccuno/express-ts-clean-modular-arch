@@ -8,11 +8,11 @@ import {
   BelongsTo,
   Default,
 } from 'sequelize-typescript';
-import { CompositeProduct } from './composite-product.model';
-import { IndividualProduct } from './individual-product.model';
+import CompositeProduct from './composite-product.model';
+import IndividualProduct from './individual-product.model';
 
 @Table({ tableName: 'composite_product_items' })
-export class CompositeProductItem extends Model {
+export default class CompositeProductItem extends Model {
   @PrimaryKey
   @Default(DataType.UUIDV4)
   @Column(DataType.UUID)

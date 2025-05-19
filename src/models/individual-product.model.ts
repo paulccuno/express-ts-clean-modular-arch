@@ -6,10 +6,11 @@ import {
   Default,
   PrimaryKey,
   Table,
+  UpdatedAt,
 } from 'sequelize-typescript';
 
 @Table({ tableName: 'individual_products' })
-export class IndividualProduct extends Model {
+export default class IndividualProduct extends Model {
   @PrimaryKey
   @Default(DataType.UUIDV4)
   @Column(DataType.UUID)
@@ -24,4 +25,8 @@ export class IndividualProduct extends Model {
   @CreatedAt
   @Column(DataType.DATE)
   fecha_creacion!: Date;
+
+  @UpdatedAt
+  @Column(DataType.DATE)
+  fecha_actualizacion!: Date;
 }

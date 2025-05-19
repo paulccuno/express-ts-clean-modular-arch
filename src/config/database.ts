@@ -8,8 +8,21 @@ export const sequelize = new Sequelize(env.DB_URL, {
   logging: env.NODE_ENV !== 'production',
 });
 
-const modelFiles = readdirSync(path.join(__dirname, '../models'))
-  .filter((file) => file.endsWith('.model.ts') || file.endsWith('.model.js'))
-  .map((file) => require(`../models/${file}`).default);
+export async function loadModels() {
+  const modelDir = path.join(__dirname, '../models');
 
-sequelize.addModels(modelFiles);
+  const modelFiles = readdirSync(modelDir).filter(
+    (file) => file.endsWith('.model.ts') || file.endsWith('.model.js')
+  );
+
+  const models = modelFiles.map((file) => {
+    const module = require(path.join(modelDir, file));
+    return module.default ?? Object.values(module)[0];
+  });
+
+  console.log(
+    '✅ Modelos cargados:',
+    models.map((m) => m.name)
+  );
+  sequelize.addModels(models);
+}

@@ -7,10 +7,10 @@ import {
   Default,
   HasMany,
 } from 'sequelize-typescript';
-import { CompositeProductItem } from './composite-product-item.model';
+import CompositeProductItem from './composite-product-item.model';
 
 @Table({ tableName: 'composite_products' })
-export class CompositeProduct extends Model {
+export default class CompositeProduct extends Model {
   @PrimaryKey
   @Default(DataType.UUIDV4)
   @Column(DataType.UUID)

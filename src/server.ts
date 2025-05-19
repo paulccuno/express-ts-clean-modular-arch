@@ -1,7 +1,10 @@
-import app from './app'
+import app from './app';
+import { bootstrapDatabase } from './bootstrap';
+import { env } from './config/env';
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-})
+bootstrapDatabase().then(() => {
+  app.listen(env.PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${env.PORT}`);
+    console.log(`📚 Swagger UI: http://localhost:${env.PORT}/docs`);
+  });
+});

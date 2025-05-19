@@ -1,0 +1,22 @@
+services:
+  products-db:
+    image: postgres:16.2
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=productsdb
+  
+  products-api:
+    depends_on:
+      - products-db
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/usr/src/app/src
+    command: npm run dev
+    env_file:
+      - ./.env.development
