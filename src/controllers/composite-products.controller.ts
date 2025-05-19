@@ -37,7 +37,7 @@ export class CompositeProductsController extends Controller {
   @Get('{id}')
   getCompositeProductById(@Path() id: string) {
     if (!isUuid(id))
-      throw { status: 400, message: `Parameter "id" must be a valid UUID ` };
+      throw { status: 400, message: `Parámetro "id" debe ser un UUID válido` };
 
     return this.compositeProductsService.getCompositeProductById(id);
   }
@@ -48,7 +48,7 @@ export class CompositeProductsController extends Controller {
     @Body() dto: CreateCompositeProductDto
   ) {
     if (!isUuid(id))
-      throw { status: 400, message: `Parameter "id" must be a valid UUID ` };
+      throw { status: 400, message: `Parámetro "id" debe ser un UUID válido` };
 
     return this.compositeProductsService.updateCompositeProductById(id, dto);
   }
@@ -56,7 +56,7 @@ export class CompositeProductsController extends Controller {
   @Delete('{id}')
   removeCompositeProductById(@Path() id: string) {
     if (!isUuid(id))
-      throw { status: 400, message: `Parameter "id" must be a valid UUID ` };
+      throw { status: 400, message: `Parámetro "id" debe ser un UUID válido` };
 
     return this.compositeProductsService.removeCompositeProductById(id);
   }

@@ -11,7 +11,7 @@ export const errorHandler: ErrorRequestHandler = (
   res: Response,
   _next: NextFunction
 ) => {
-  console.error('❌ Error atrapado:', err);
+  console.error('❌ Error:', err);
 
   // Sequelize
   if (err instanceof SequelizeValidationError) {

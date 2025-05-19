@@ -10,10 +10,9 @@ const schema = z.object({
 });
 
 const result = schema.safeParse(process.env);
-console.log({ result });
 
 if (!result.success) {
-  console.error('❌ Invalid environment variables:', result.error.format());
+  console.error('❌ Variables de entorno inválidas:', result.error.format());
   process.exit(1);
 }
 

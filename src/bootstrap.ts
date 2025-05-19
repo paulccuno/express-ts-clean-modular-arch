@@ -6,9 +6,9 @@ export async function bootstrapDatabase() {
 
   if (env.NODE_ENV === 'production') {
     await sequelize.sync();
-    console.log('✅ DB synced (safe mode)');
+    console.log('✅ DB sincronizado (modo seguro)');
   }
 
   await sequelize.sync({ alter: true });
-  console.log(`✅ DB synced with alter for ${env.NODE_ENV}`);
+  console.log(`✅ DB sincronizada con alter para ${env.NODE_ENV}`);
 }

@@ -40,7 +40,7 @@ export class IndividualProductsController extends Controller {
   @Get('{id}')
   getIndividualProductById(@Path() id: string) {
     if (!isUuid(id))
-      throw { status: 400, message: `Parameter "id" must be a valid UUID ` };
+      throw { status: 400, message: `Parámetro "id" debe ser un UUID válido` };
 
     return this.individualProductsService.getIndividualProductById(id);
   }
@@ -51,7 +51,7 @@ export class IndividualProductsController extends Controller {
     @Body() dto: UpdateIndividualProductDto
   ) {
     if (!isUuid(id))
-      throw { status: 400, message: `Parameter "id" must be a valid UUID ` };
+      throw { status: 400, message: `Parámetro "id" debe ser un UUID válido` };
 
     return this.individualProductsService.updateIndividualProductById(id, dto);
   }
@@ -59,7 +59,7 @@ export class IndividualProductsController extends Controller {
   @Delete('{id}')
   removeIndividualProductById(@Path() id: string) {
     if (!isUuid(id))
-      throw { status: 400, message: `Parameter "id" must be a valid UUID ` };
+      throw { status: 400, message: `Parámetro "id" debe ser un UUID válido` };
 
     return this.individualProductsService.removeIndividualProductById(id);
   }
