@@ -1,4 +1,4 @@
-# 🛠️ SABBI Challenge
+# 🛠️ Express.js + TypeScript | Clean and Modular Architecture
 
 Este proyecto es una API REST construida con **Express.js + TypeScript**, siguiendo principios de **Clean Architecture**, usando:
 
